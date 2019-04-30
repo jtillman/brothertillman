@@ -1,6 +1,10 @@
 ﻿@page "/blogs/vuedotnet"
 @inject Vue.Net.IVueEngine  _viewEngine;
 
+@{
+    ViewData["Title"] = "Vue.Net";
+}
+
 <vue-application class="full-height">
     @{
         _viewEngine.NotifyUsed(_viewEngine.GetComponent("base-page-component"));
