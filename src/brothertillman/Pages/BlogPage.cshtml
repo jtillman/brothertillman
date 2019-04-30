@@ -1,0 +1,10 @@
+﻿@page "/blogs/vuedotnet"
+@inject Vue.Net.IVueEngine  _viewEngine;
+
+<vue-application class="full-height">
+    @{
+        _viewEngine.NotifyUsed(_viewEngine.GetComponent("base-page-component"));
+        _viewEngine.NotifyUsed(_viewEngine.GetComponent("blog-page-component"));
+    }
+    <blog-page-component></blog-page-component>
+</vue-application>

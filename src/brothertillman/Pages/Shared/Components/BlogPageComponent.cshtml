@@ -1,0 +1,108 @@
+﻿<base-page-component>
+    <template #content>
+        <div class="ui very padded piled segment">
+            <div class="ui centered huge header">Introducing Vue.Net (alpha)</div>
+            <div class="ui placeholder segment">
+                <div class="ui two column stackable center aligned grid">
+                    <div class="ui vertical divider">
+                        <i class="plus icon"></i>
+                    </div>
+                    <div class="middle aligned row">
+                        <div class="column">
+                            <div class="ui icon header">
+                                <i class="microsoft icon"></i>
+                                Asp.Net
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui icon header">
+                                <i class="vuejs icon"></i>
+                                Vue.js
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui styled fluid accordion">
+                @foreach (var entry in new Dictionary<string, string> {
+                     {
+                         "What is Vue.Net?",
+                         "Vue.Net enables developers developing on Asp.Net to use Vue.Js's client framework, but with C# written components."
+                     },
+                     {
+                         "How does this differ from the Blazor project?",
+                         "While Blazor sends the entire .Net Runtime to the browser using web assembly, Vue.Net send only the javascript that is required to run your application using Vue.Js"
+                     },
+                     {
+                         "Why would someone choose Vue.Net?",
+                         "There are many benefits to the Vue.Net approach. It provides the Vue.js Templating Engine, which only extends HTML. This differs from Razor, which requires C# to control template flow which promotes mixing C# and HTML syntax. Also, since Vue.Net makes use of the javascript runtime, only requires a Vue.Js (~32 KB in size) and your applications bytes (as small as 1KB) to run. This makes Vue.Net small enough to download on slow/poor network devices."
+                     },
+                     {
+                         "Why is a declarative UI language important?",
+                         "Similar to how XAML impacted the .Net Framework Community for building desktop Applications, popular javascript frameworks like AngularJs & VueJs have made declarative templates simply by extending HTML elements and attributes. Having HTML compliant templates enforces separation of concerns between business and view logic. This supports the developer and design team in understanding, managing, and testing their changes. I believe our developer community should avoid giving developers the freedom of writing complex UI logic within view templates because it negatively impacts the readability of view templates and often deters web designers from directly making changes."
+                     }
+                })
+                {
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        @entry.Key
+                    </div>
+                    <div class="content">
+                        <p class="transition visible">
+                            @entry.Value
+                        </p>
+                    </div>
+                }
+            </div>
+
+            <div class="ui segment">
+                <h3 class="ui header">Get Started with Vue.Net</h3>
+                <div class="ui segment">
+                    <h5>Install Vue.Net Nuget Package (In .csproj)</h5>
+                    <div v-html="AddVueNugetMarkdown"></div>
+                </div>
+                <div class="ui segment">
+                    <h5>Add Vue.Net Service (In Startup.cs)</h5>
+                    <div v-html="AddVueServiceMarkdown"></div>
+                </div>
+                <div class="ui segment">
+                    <h5>Import Vue.Net Taghelpers (In _ViewImports.cshtml)</h5>
+                    <div v-html="AddVueTagHelpersMarkdown"></div>
+                </div>
+                <div class="ui segment">
+                    <h5>Add Vuejs and a javascript placeholder (In _Layout.cshtml)</h5>
+                    <div v-html="AddVueToLayoutMarkdown"></div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h3 class="ui header">Creating Vue.Net Components</h3>
+                <div class="ui segment">
+                    <h5>Create your first Vue Model Component (In ApplicationComponent.cshtml)</h5>
+                    <div v-html="CreateVueModelMarkdown"></div>
+                </div>
+                <div class="ui segment">
+                    <h5>Create a template for you Vue Model (In ApplicationComponent.cshtml.cs)</h5>
+                    <div v-html="CreateVueTemplateMarkdown"></div>
+                </div>
+
+                <div class="ui segment">
+                    <h5>Register your Component (Startup.cs)</h5>
+                    <div v-html="VueComponentRegistrationMarkdown"></div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h3 class="ui header">Creating Vue.Net Application (Index.cshtml)</h3>
+                <div class="ui segment">
+                    <h5>Start Vue applications on Razor pages using the vue-application component</h5>
+                    <div v-html="VueApplicationMarkdown"></div>
+                </div>
+            </div>
+
+            <div class="ui segment">
+                <h3>What's next?</h3>
+                <p>File Bugs and Feature Requests! Depending on consumer feedback, I plan to release a production version in the coming month.
+                Keep up to date and we would love your feedback on the <a href="https://github.com/jtillman/vue.net" target="_blank">GitHub Repo</a></p>
+            </div>
+        </div>
+    </template>
+</base-page-component>

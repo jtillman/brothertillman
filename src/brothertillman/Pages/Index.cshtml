@@ -1,0 +1,75 @@
+﻿@page
+@inject Vue.Net.IVueEngine _vueEngine;
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+@section Head {
+    <style type="text/css">
+        .masthead img.ui.image {
+            margin-top: 2em;
+        }
+
+        .masthead.segment {
+            min-height: 400px;
+            padding: 1em 0em;
+        }
+
+        .masthead h1.ui.header {
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+    </style>
+}
+
+<vue-application class="full-height">
+    <main-page-component></main-page-component>
+</vue-application>
+
+@*<div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment" style="background: center center no-repeat #222; background-image: url('/images/backgrounddesk.jpg'); background-size:cover;">
+        <div class="ui container">
+            <div class="ui secondary inverted pointing menu" style="border: 0px;">
+                <partial name="_MenuItems"/>
+            </div>
+        </div>
+        <div class="ui text container">
+            <img class="ui small centered circular image" src="~/images/profile.jpg" />
+            <h1 class="ui inverted header">
+                Brother Tillman
+                <span class="sub header">Software Architect / Code Thrasher / Lifelong Student</span>
+            </h1>
+            <div class="ui horizontal list">
+                <a class="item" href="https://github.com/jtillman" target="_blank"><i class="grey big github icon"></i></a>
+                <a class="item" href="https://www.linkedin.com/in/thejeremytillman/" target="_blank"><i class="grey big linkedin icon"></i></a>
+                <a class="item" href="https://twitter.com/Aliwishis" target="_blank"><i class="grey big twitter icon"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui vertical stripe segment">
+        <div class="ui container">
+
+            <div class="ui three column doubling stackable grid">
+                <div class="column">
+                    <div class="ui raised fluid link card">
+                        <div class="content">
+                            <div class="center aligned header">Making asynchronous architecture common practice</div>
+                        </div>
+                        <div class="image content">
+                            <img src="~/images/AsyncService.jpg" />
+                        </div>
+                        <div class="content">
+                            <div class="description">
+                                Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.
+                            </div>
+                            <div class="meta">2 days ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@

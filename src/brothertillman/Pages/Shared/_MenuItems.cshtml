@@ -1,0 +1,12 @@
+﻿@{
+    List<(string Title, string Path)> allMenuItems = new List<(string, string)> {
+        ("Home", "/"),
+        ("About", "/About")
+    };
+}
+
+@foreach (var item in allMenuItems)
+{
+    var cssClass = Context.Request.Path.Value.Equals(item.Path, StringComparison.InvariantCultureIgnoreCase) ? "active item" : "item";
+    <a href="@item.Path" class="@cssClass">@item.Title</a>
+}
